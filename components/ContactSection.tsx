@@ -63,20 +63,20 @@ export default function ContactSection({ themeColor }: ContactSectionProps) {
   ];
 
   return (
-    <section id="contact" className="p-6 md:p-12 max-w-5xl mx-auto text-gray-800 animate-fadeIn">
+    <section id="contact" className="p-4 sm:p-6 md:p-12 max-w-5xl mx-auto text-gray-800 animate-fadeIn">
       {/* Header matching exact image mockup */}
-      <div className="border-b border-gray-200 pb-4 mb-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight flex items-center gap-3">
+      <div className="border-b border-gray-200 pb-4 mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight flex items-center gap-2 sm:gap-3">
           Contact <span style={{ color: themeColor }}>Me</span>
-          <span className="w-12 h-1 rounded-full inline-block transition-all duration-300" style={{ backgroundColor: themeColor }} />
+          <span className="w-8 sm:w-12 h-1 rounded-full inline-block transition-all duration-300" style={{ backgroundColor: themeColor }} />
         </h2>
-        <p className="text-sm text-gray-500 mt-1">Get in touch for web design inquiries, collaborations, or freelance projects.</p>
+        <p className="text-xs sm:text-sm text-gray-500 mt-1">Get in touch for web design inquiries, collaborations, or freelance projects.</p>
       </div>
 
       {/* Grid: Form & Side Contact Cards */}
-      <div className="grid lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
         {/* Contact Form matching exact image specs */}
-        <div className="lg:col-span-8 bg-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-md">
+        <div className="lg:col-span-8 bg-white p-5 sm:p-8 rounded-3xl border border-gray-100 shadow-md">
           {/* Submission Toast Alert */}
           {submitted && (
             <div className="mb-6 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-3 animate-in fade-in slide-in-from-top-2">
@@ -90,9 +90,9 @@ export default function ContactSection({ themeColor }: ContactSectionProps) {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
             {/* Input Row: Full Name & Email Address */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Full Name</label>
                 <input

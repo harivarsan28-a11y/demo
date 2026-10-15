@@ -54,64 +54,64 @@ export default function AboutSection({ themeColor }: AboutSectionProps) {
   ];
 
   const stats = [
-    { label: "Years Experience", value: "8+" },
-    { label: "Completed Projects", value: "50+" },
-    { label: "Happy Clients", value: "30+" },
+    { label: "Years Experience", value: "3+" },
+    { label: "Completed Projects", value: "25+" },
+    { label: "Happy Clients", value: "20+" },
     { label: "Design Awards", value: "5" },
   ];
 
   return (
-    <section id="about" className="p-6 md:p-12 max-w-5xl mx-auto text-gray-800 animate-fadeIn">
+    <section id="about" className="p-4 sm:p-6 md:p-12 max-w-5xl mx-auto text-gray-800">
       {/* Header */}
-      <div className="border-b border-gray-200 pb-4 mb-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight flex items-center gap-3">
+      <div className="border-b border-gray-200/80 pb-4 mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight flex items-center gap-2 sm:gap-3">
           About <span style={{ color: themeColor }}>Me</span>
-          <span className="w-12 h-1 rounded-full inline-block transition-all duration-300" style={{ backgroundColor: themeColor }} />
+          <span className="w-8 sm:w-12 h-1 rounded-full inline-block transition-all duration-300" style={{ backgroundColor: themeColor }} />
         </h2>
-        <p className="text-sm md:text-base font-semibold text-gray-500 mt-1 tracking-wide">
+        <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-500 mt-1 tracking-wide">
           Web Designer & UI/UX Specialist
         </p>
       </div>
 
       {/* Main Grid: Story Bio & Personal Info Box */}
-      <div className="grid md:grid-cols-12 gap-8 mb-12 items-start">
+      <div className="grid md:grid-cols-12 gap-6 md:gap-8 mb-8 sm:mb-12 items-start">
         {/* Bio Text */}
-        <div className="md:col-span-7 space-y-5 text-gray-600 leading-relaxed text-sm md:text-base">
-          <p className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm border-l-4 transition-all duration-300 hover:shadow-md" style={{ borderLeftColor: themeColor }}>
-            I'm Alex Smith, a passionate web designer with over 8 years of experience creating sleek, functional, and visually striking digital experiences.
+        <div className="md:col-span-7 space-y-4 sm:space-y-5 text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base">
+          <p className="p-4 sm:p-5 bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm border-l-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5" style={{ borderLeftColor: themeColor }}>
+            I'm <strong className="text-gray-900 font-bold">Harivarsan Srinivasan</strong>, a passionate web designer and UI/UX specialist dedicated to creating sleek, functional, and visually striking digital experiences.
           </p>
-          <p className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm border-l-4 transition-all duration-300 hover:shadow-md" style={{ borderLeftColor: themeColor }}>
-            My goal is to craft digital products that seamlessly bridge user needs and modern brand aesthetics through crisp layouts and intuitive design systems.
+          <p className="p-4 sm:p-5 bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm border-l-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5" style={{ borderLeftColor: themeColor }}>
+            My goal is to craft modern digital products that seamlessly bridge user needs and brand aesthetics through crisp layouts, intuitive design systems, and responsive front-end development.
           </p>
         </div>
 
         {/* Personal Details Card */}
-        <div className="md:col-span-5 bg-white p-6 rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
+        <div className="md:col-span-5 bg-white p-5 sm:p-6 rounded-3xl border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group">
           {/* Accent top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-1.5 transition-all duration-300" style={{ backgroundColor: themeColor }} />
 
-          <h3 className="text-base font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100 flex items-center justify-between">
+          <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100 flex items-center justify-between">
             <span>Personal Information</span>
-            <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: themeColor }} />
+            <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: themeColor }} />
           </h3>
 
-          <div className="space-y-3.5">
+          <div className="space-y-2.5 sm:space-y-3.5">
             {personalInfo.map((info, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between py-1.5 border-b border-gray-100 last:border-0 group/row hover:bg-gray-50/80 px-2 rounded-lg transition-colors"
+                className="flex items-center justify-between py-1.5 border-b border-gray-100 last:border-0 group/row hover:bg-gray-50/80 px-1 sm:px-2 rounded-lg transition-colors text-xs"
               >
-                <span className="font-bold text-xs text-gray-700 uppercase tracking-wider">{info.label}</span>
+                <span className="font-bold text-gray-600 uppercase tracking-wider">{info.label}</span>
                 {info.isLink ? (
                   <a
                     href={`mailto:${info.value}`}
-                    className="text-xs font-semibold hover:underline transition-colors break-all"
+                    className="font-bold hover:underline transition-colors break-all text-right ml-2"
                     style={{ color: themeColor }}
                   >
                     {info.value}
                   </a>
                 ) : (
-                  <span className="text-xs font-bold text-gray-800">{info.value}</span>
+                  <span className="font-bold text-gray-800 text-right ml-2">{info.value}</span>
                 )}
               </div>
             ))}
@@ -120,34 +120,34 @@ export default function AboutSection({ themeColor }: AboutSectionProps) {
       </div>
 
       {/* Stats Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
         {stats.map((stat, idx) => (
           <div
             key={idx}
-            className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
+            className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 group cursor-default"
           >
-            <div className="text-2xl md:text-3xl font-extrabold transition-transform duration-300 group-hover:scale-110" style={{ color: themeColor }}>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-black transition-transform duration-300 group-hover:scale-110" style={{ color: themeColor }}>
               {stat.value}
             </div>
-            <div className="text-xs font-semibold text-gray-500 mt-1 uppercase tracking-wider">{stat.label}</div>
+            <div className="text-[11px] sm:text-xs font-extrabold text-gray-500 mt-1 uppercase tracking-wider">{stat.label}</div>
           </div>
         ))}
       </div>
 
       {/* Services / What I Do Section */}
       <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
           <span>What I Do</span>
-          <span className="h-0.5 w-10 rounded-full" style={{ backgroundColor: themeColor }} />
+          <span className="h-0.5 w-10 sm:w-12 rounded-full" style={{ backgroundColor: themeColor }} />
         </h3>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
+              className="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group relative overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4 shadow-sm transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: themeColor }}>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-4 shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" style={{ backgroundColor: themeColor }}>
                 {service.icon}
               </div>
               <h4 className="text-base font-bold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors">
@@ -163,4 +163,5 @@ export default function AboutSection({ themeColor }: AboutSectionProps) {
     </section>
   );
 }
+
 

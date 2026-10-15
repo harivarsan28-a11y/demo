@@ -107,23 +107,23 @@ export default function PortfolioSection({ themeColor }: PortfolioSectionProps) 
       : projectsData.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="portfolio" className="p-8 md:p-14 max-w-5xl mx-auto text-gray-800 mt-2">
+    <section id="portfolio" className="p-4 sm:p-8 md:p-14 max-w-5xl mx-auto text-gray-800 mt-2">
       {/* Header Title */}
       <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 pb-4 mb-6" style={{ borderColor: themeColor }}>
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Portfolio</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Portfolio</h2>
           <p className="text-xs text-gray-500 mt-1">Showcase of featured projects, applications, and creative designs</p>
         </div>
         
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap gap-2 mt-4 md:mt-0">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 md:mt-0">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`text-xs px-3 py-1.5 rounded-full transition-all cursor-pointer font-medium ${
+                className={`text-xs px-2.5 sm:px-3 py-1.5 rounded-full transition-all cursor-pointer font-medium ${
                   isActive
                     ? "text-white shadow-sm"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -137,8 +137,8 @@ export default function PortfolioSection({ themeColor }: PortfolioSectionProps) 
         </div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid md:grid-cols-3 gap-6">
+      {/* Projects Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
@@ -252,13 +252,13 @@ export default function PortfolioSection({ themeColor }: PortfolioSectionProps) 
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-8 flex gap-3 pt-4 border-t border-gray-100">
+              <div className="mt-8 flex flex-wrap gap-2.5 sm:gap-3 pt-4 border-t border-gray-100 items-center">
                 {activeModalProject.liveUrl && (
                   <a
                     href={activeModalProject.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-5 py-2.5 rounded-lg text-white font-medium text-xs shadow-md transition-all cursor-pointer hover:opacity-95"
+                    className="flex-1 sm:flex-initial text-center px-4 sm:px-5 py-2.5 rounded-lg text-white font-medium text-xs shadow-md transition-all cursor-pointer hover:opacity-95"
                     style={{ backgroundColor: themeColor }}
                   >
                     View Live Project
@@ -269,14 +269,14 @@ export default function PortfolioSection({ themeColor }: PortfolioSectionProps) 
                     href={activeModalProject.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-5 py-2.5 rounded-lg bg-gray-900 text-white font-medium text-xs shadow-md transition-all cursor-pointer hover:bg-gray-800"
+                    className="flex-1 sm:flex-initial text-center px-4 sm:px-5 py-2.5 rounded-lg bg-gray-900 text-white font-medium text-xs shadow-md transition-all cursor-pointer hover:bg-gray-800"
                   >
-                    View Source Code
+                    Source Code
                   </a>
                 )}
                 <button
                   onClick={() => setActiveModalProject(null)}
-                  className="px-4 py-2.5 rounded-lg border border-gray-200 text-gray-600 font-medium text-xs cursor-pointer hover:bg-gray-50 ml-auto"
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-gray-200 text-gray-600 font-medium text-xs cursor-pointer hover:bg-gray-50 sm:ml-auto"
                 >
                   Close
                 </button>

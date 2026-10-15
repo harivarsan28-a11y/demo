@@ -86,23 +86,23 @@ export default function ResumeSection({ themeColor }: ResumeSectionProps) {
   const filteredExperience = activeCategory === "education" ? [] : experienceData;
 
   return (
-    <section id="resume" className="p-6 md:p-12 max-w-5xl mx-auto text-gray-800 animate-fadeIn">
+    <section id="resume" className="p-4 sm:p-6 md:p-12 max-w-5xl mx-auto text-gray-800 animate-fadeIn">
       {/* Header Section with Title & Download CV CTA */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-200 pb-4 mb-8">
+      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-200 pb-4 mb-6 sm:mb-8">
         <div>
           <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">Career & Education</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight mt-1 flex items-center gap-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight mt-1 flex items-center gap-2 sm:gap-3">
             RESUME
-            <span className="w-12 h-1 rounded-full inline-block transition-all duration-300" style={{ backgroundColor: themeColor }} />
+            <span className="w-8 sm:w-12 h-1 rounded-full inline-block transition-all duration-300" style={{ backgroundColor: themeColor }} />
           </h2>
         </div>
 
         {/* Filter Buttons & Download CTA */}
-        <div className="flex flex-wrap items-center gap-3 mt-4 md:mt-0">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mt-4 md:mt-0">
           <div className="bg-gray-100 p-1 rounded-lg flex gap-1 border border-gray-200 text-xs font-medium">
             <button
               onClick={() => setActiveCategory("all")}
-              className={`px-3 py-1.5 rounded-md transition-all duration-200 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-md transition-all duration-200 ${
                 activeCategory === "all" ? "bg-white text-gray-900 shadow-sm font-semibold" : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -110,7 +110,7 @@ export default function ResumeSection({ themeColor }: ResumeSectionProps) {
             </button>
             <button
               onClick={() => setActiveCategory("education")}
-              className={`px-3 py-1.5 rounded-md transition-all duration-200 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-md transition-all duration-200 ${
                 activeCategory === "education" ? "bg-white text-gray-900 shadow-sm font-semibold" : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -118,7 +118,7 @@ export default function ResumeSection({ themeColor }: ResumeSectionProps) {
             </button>
             <button
               onClick={() => setActiveCategory("experience")}
-              className={`px-3 py-1.5 rounded-md transition-all duration-200 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-md transition-all duration-200 ${
                 activeCategory === "experience" ? "bg-white text-gray-900 shadow-sm font-semibold" : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -127,14 +127,18 @@ export default function ResumeSection({ themeColor }: ResumeSectionProps) {
           </div>
 
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
-            style={{ backgroundColor: themeColor }}
+            href="/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+            style={{ backgroundColor: "#F59E0B" }}
+            title="Download & Print 4-Page A4 Resume"
           >
+            {/* Download Icon matching user image */}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download CV
+            <span>Download CV</span>
           </a>
         </div>
       </div>
